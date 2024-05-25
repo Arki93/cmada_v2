@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <a href="{% url 'products:home_product' %}">Return</a>
+    <hr />
+    <h1>Stock</h1>    
+    
+    <p>Add Stock</p>
+    <hr />
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}       
+        <button type="submit">Créer</button>
+    </form>
+
+{% endblock content %}

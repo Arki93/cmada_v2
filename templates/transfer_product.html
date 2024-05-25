@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'products:transfer_product' pk=product.id %}">
+    {% csrf_token %}
+    <label for="transfert_qty">Enter quantity to transfer:</label>
+    <input type="number" name="transfer_qty" required>
+    <label for="site_to">Transfert to:</label>
+    <input type="text" name="site_to" required>
+    <button type="submit">Transfert</button>
+</form>
+
+<a href="{% url 'products:home_product' %}">Retour</a>
+<br>
+{% endblock content %}

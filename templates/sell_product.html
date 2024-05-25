@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Sell Product</h2>
+
+    <form method="post" action="{% url 'products:sell_product' pk=product.id %}">
+        {% csrf_token %}
+        <label for="sell_qty">Enter quantity to sell:</label>
+        <input type="number" name="sell_qty" required>
+        <button type="submit">Sell</button>
+    </form>
+
+    <a href="{% url 'products:home_product' %}">Retour</a>
+    <br>
+    
+{% endblock content %}

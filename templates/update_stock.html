@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{% url 'products:home_product' %}">Return</a>
+    <hr />
+    <h1>Product</h1>    
+    
+    <p>Update products</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+
+{% endblock content %}
